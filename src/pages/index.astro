@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title='Astro View Transitions Bug Repro'>
+	<div class='container post-grid'>
+		{[...Array(20).keys()].map((_, i) =>
+			<a
+				href='/post'
+				class='post'
+			>
+				Post {i}
+			</a>
+		)}
+	</div>
+</Layout>
+
+<style>
+	.post-grid {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.post {
+		display: block;
+		background-color: #1a1a1a;
+		border-radius: 0.5rem;
+		padding: 1.5rem 2rem;
+		color: #fafafa;
+		text-decoration: none;
+	}
+
+	.post:hover {
+		background-color: #2a2a2a;
+	}
+</style>
